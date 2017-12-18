@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > PlanetProfiler
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Based on user interest, decide how you could conquer the starwars universe!
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Ever thought about how you would fit into the StarWars Galaxy? Now you can figure out. You, as the user, will select the type of criteria that fits you. With these choices, we will tell you what type of warrior, gear, planets, and how you can become the next Jedi!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Figuring out how you could become a Jedi. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Instead of researching all the starwars criteria, this app will tell the user how to start their Jedi journey based on the criteria they entered. 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > Making jedi training that yoou , the user, can find the best path for follow for yourself!
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Only a account registration and a few clicks will allow you to find your Jedi setup
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Within minutes I narrowed down my jedi gear and figured out where I needed to start training!"
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Log in, select your criteria, and figure out how to become the next Jedi!

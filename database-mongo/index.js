@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+//connect to your server here
 mongoose.connect('mongodb://localhost/test');
 
 var db = mongoose.connection;
