@@ -23,7 +23,7 @@ Once the project moves into development, the press release can be used as a touc
   > Based on user interest, decide how you could conquer the starwars universe!
 
 ## Summary ##
-  > Ever thought about how you would fit into the StarWars Galaxy? Now you can figure out. You, as the user, will select the type of criteria that fits you. With these choices, we will tell you what type of warrior, gear, planets, and how you can become the next Jedi!
+  > Ever thought about how you would fit into the StarWars Galaxy? Now you can figure out. You, as the user, will select the type of criteria that fits you. With these choices, we will tell you what type of gear, planets, and partners will help you become the next Jedi!
 
 ## Problem ##
   > Figuring out how you could become a Jedi. 
