@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 //connect to your server here
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://planetfinder:planetfinder@ds159926.mlab.com:59926/planethunter');
 
 var db = mongoose.connection;
 
@@ -11,6 +11,8 @@ db.on('error', function() {
 db.once('open', function() {
   console.log('mongoose connected successfully');
 });
+
+var Schema = mongoose.Schema;
 
 // var itemSchema = mongoose.Schema({
 //   quantity: Number,

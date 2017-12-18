@@ -14,15 +14,16 @@ var app = express();
 app.use(express.static(__dirname + '/../angular-client'));
 app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/', function (req, res) {
-  if (err) {
-    console.log(err)
-  }
-  else {
-    console.log(req);
-    res.send(200)
-  }
-});
+// app.get('/', function (req, res) {
+//   if (err) {
+//     console.log(err)
+//   }
+//   else {
+//     console.log("helloooooo in res");
+//     res.send(200)
+//   }
+// });
+
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');
