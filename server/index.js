@@ -58,8 +58,15 @@ app.delete('/users', function (req, res) {
 
 app.post('/ships', function (req, res) {
   
-  const { ship } = req.body;
-  console.log(ship.name, 'this is shiptype!$!$!$$')
+  // const { ship } = req.body;
+  for(var key in req.body.ship) {
+    if (key === "undefined") {
+      delete req.body.ship.com
+    }
+  }
+  for (var key in req.body.ship) {
+    console.log(key)
+  }
   // console.log(name, "this is ship name!@!#!$$!")
   if (!req.body) {
     return res.sendStatus(400)
