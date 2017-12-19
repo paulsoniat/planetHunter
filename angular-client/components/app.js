@@ -73,6 +73,23 @@ angular.module('app')
           });
         }).catch(err => console.error(err));
     }
+    $scope.changeShip = (ship, username) => {
+      console.log(ship, username, "ship and username")
+      $http.put('/ships', $scope.data)
+      // console.log($scope.data)
+        .then((response) => {
+          // console.log(username);
+          return $http({
+            method: 'PUT',
+            url: '/ships',
+            data: {
+              username: username,
+              ship: ship
+            },
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }).catch(err => console.error(err));
+    }
   $scope.starWars();
 })
 .component('app', {

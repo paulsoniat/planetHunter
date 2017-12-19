@@ -42,6 +42,7 @@ app.post('/users', function (req, res) {
   }
 })
 
+
 app.delete('/users', function (req, res) {
   if (!req.body) {
     return res.sendStatus(400)
@@ -82,14 +83,14 @@ app.put('/ships', function (req, res) {
   }
   else {
     //find the ship with matching username and change it to the ship provided
-    // var query = db.User.find().remove({ username: `${req.body.username}` })
     statusCode = 200;
     //not actually updating
-    // var query = db.Ship.update({ username: `${req.body.username}` }, { username: `${req.body.username}`, ship: `${req.body.ship}`})
+    var query = db.Ship.update({ username: `${req.body.username}` }, { username: `${req.body.username}`, ship: `${req.body.ship}`})
     query.exec()
     res.send(statusCode, req.body)
   }
 })
+
 
 
 // app.listen(PORT, function() {
