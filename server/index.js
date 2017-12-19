@@ -41,6 +41,18 @@ app.post('/users', function (req, res) {
     res.send(statusCode, req.body)
   }
 })
+app.delete('/users', function (req, res) {
+  if (!req.body) {
+    return res.sendStatus(400)
+  }
+  else {
+    var statusCode = 201
+    //what should model be here?
+    var query = Model.find().remove({ name: `${username}` })
+    query.exec()
+    res.send(statusCode, req.body)
+  }
+})
 
 app.post('/ships', function (req, res) {
   console.log(req.body, "this is the body");

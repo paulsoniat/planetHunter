@@ -26,6 +26,7 @@
     <div ng-controller="AppCtrl">
       <input type="text" ng-model="username" />
         <button ng-click="addUser(username)">Login</button>
+        <button ng-click="removeUser(username)">LogOut</button>
         <div ng-repeat="ship in ships">
           <div ng-click="registerShip(ship, username)">{{ship.name}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
         </div>

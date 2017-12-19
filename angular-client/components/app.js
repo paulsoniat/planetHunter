@@ -31,6 +31,20 @@ angular.module('app')
         });
     }).catch(err => console.error(err));
   },
+  $scope.removeUser = (username) => {
+    $http.delete('/users', $scope.data)
+      .then((response) => {
+      console.log(username);
+        return $http({
+          method: 'DELETE',
+          url: '/users',
+          data: {
+            username: username
+          },
+          headers: { 'Content-Type': 'application/json' }
+        });
+    }).catch(err => console.error(err));
+  },
   $scope.starWars = () => {
     $http.get('https://swapi.co/api/starships')
     .then((response) => {
