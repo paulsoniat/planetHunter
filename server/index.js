@@ -44,7 +44,6 @@ app.post('/users', function (req, res) {
 
 
 app.delete('/users', function (req, res) {
-  console.log('in delete')
   if (!req.body) {
     return res.sendStatus(400)
   }
@@ -64,10 +63,9 @@ app.post('/ships', function (req, res) {
       delete req.body.ship.com
     }
   }
-  for (var key in req.body.ship) {
-    console.log(key)
-  }
-  // console.log(name, "this is ship name!@!#!$$!")
+  // for (var key in req.body.ship) {
+  //   console.log(key)
+  // }
   if (!req.body) {
     return res.sendStatus(400)
   }
@@ -82,22 +80,32 @@ app.post('/ships', function (req, res) {
         return console.error(err)
       }
     });
-    // console.log(req.body, "this is body");
     res.send(statusCode, req.body)
   }
 })
 
 app.put('/ships', function (req, res) {
-  console.log(req.body, "this is the bodyasfgasfaf");
+  // console.log('in put to ships');
+  // console.log(req.body.username)
   if (!req.body) {
     return res.sendStatus(400)
   }
+  //find the ship with matching username and change it to the ship provided
+  //not actually updating
   else {
-    //find the ship with matching username and change it to the ship provided
     statusCode = 200;
-    //not actually updating
-    var query = db.Ship.update({ username: `${req.body.username}` }, { username: `${req.body.username}`, ship: `${req.body.ship}`})
-    query.exec()
+    // var query = db.Ship.update({ username: `${req.body.username}` }, { username: `${req.body.username}`, ship: `${req.body.ship.name}`})
+    // query.exec()
+    // console.log('query complete')
+    // res.send(statusCode, req.body)
+    db.Ship.update(
+      { username: `${req.body.username}` },
+      { $set: { "shipData": `${req.body.ship.name}` }},
+    {
+    upsert: true,
+    //  multi: <boolean>,
+    //  writeConcern: <document>
+    })
     res.send(statusCode, req.body)
   }
 })

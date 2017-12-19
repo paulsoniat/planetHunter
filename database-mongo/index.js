@@ -12,13 +12,13 @@ db.once('open', function() {
 var Schema = mongoose.Schema;
 
 var userSchema = mongoose.Schema({
-  username: String,
+  username: { type: String, unique: true, required: true, dropDups: true },
   //maybe add other things here
 });
 var User = mongoose.model('User', userSchema);
 
 var shipSchema = mongoose.Schema({
-  shipData: String,
+  shipData: { type: String, unique: true, required: true, dropDups: true },
   username: String
   //maybe add other things here
 });

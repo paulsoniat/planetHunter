@@ -35,12 +35,7 @@ angular.module('app')
     // }).catch(err => console.error(err));
   },
   $scope.removeUser = (username) => {
-    // console.log(username, "this is username!@!@!@")
-    // $http.delete('/users', username )
-    //   .then((res) => console.log(res))
-    //   .catch(err => console.error(err));
     $http.delete('/users', $scope.data)
-    // console.log($scope.data, "this is data!@!@")
       .then((response) => {
       console.log(username);
         return $http({
@@ -57,7 +52,6 @@ angular.module('app')
     $http.get('https://swapi.co/api/starships')
     .then((response) => {
       response.data.results.forEach(starShip => {
-        // console.log(starShip)
         $scope.ships.push(starShip);
       })
     }).catch(err => {

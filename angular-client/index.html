@@ -13,13 +13,11 @@
       <div class="col-md-12">
         <div class="page-header">
           <h1>
-            PlanetHunter
+            PlanetCruiser
             <small>
               <h1></h1>
-  
-              Ever thought about how you would fit into the StarWars Galaxy? Now you can figure out. You, as the user, will select the
-              type of criteria that fits you. With these choices, we will tell you what type of gear, planets, and partners
-              will help you become the next Jedi!</small>
+              Ever thought about how you would fly through the StarWars Galaxy? Now you can figure out. You, as the user, will select the
+              ship that fits you. We will assist you by providing ship critera to help you choose how you want to fly through space and become the next Jedi!</small>
           </h1>
         </div>
       </div>
@@ -36,10 +34,13 @@
       </div>
         <div ng-repeat="ship in ships">
           <div class="container-fluid">
-          <div class="well">{{"name"}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
-          <div class="well">{{ship.name}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
-          <button style="background-color:lightgreen" ng-click="registerShip(ship, username)">Add Ship</button>
-          <button style="background-color:red" ng-click="changeShip(ship, username)">Change Ship</button>
+          <div class="well">
+            <!-- <div class="well">{{"NAME"}}          {{"MANUFACTURER"}}          {{"CREDIT COST"}}</div> -->
+            <img style="float:left" src="ship icon.png" width="65" height="65"/>
+            <div class="well">{{ship.name}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
+            <button style="background-color:lightgreen" ng-click="registerShip(ship, username)">Add Ship</button>
+            <button style="background-color:red" ng-click="changeShip(ship, username)">Change Ship</button>
+          </div>
         </div>
         </div>
         <audio controls autoplay>
