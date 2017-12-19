@@ -44,6 +44,7 @@ app.post('/users', function (req, res) {
 
 
 app.delete('/users', function (req, res) {
+  console.log('in delete')
   if (!req.body) {
     return res.sendStatus(400)
   }
@@ -59,25 +60,24 @@ app.post('/ships', function (req, res) {
   
   const { ship } = req.body;
   console.log(ship, 'this is shiptype!$!$!$$')
-  res.send('tryin shit')
   // console.log(name, "this is ship name!@!#!$$!")
-  // if (!req.body) {
-  //   return res.sendStatus(400)
-  // }
-  // else {
-  //   var statusCode = 201
-  //   const newShip = new db.Ship({
-  //     shipData: req.body.ship,
-  //     username: req.body.username,
-  //   })
-  //   newShip.save((err) => {
-  //     if (err) {
-  //       return console.error(err)
-  //     }
-  //   });
-  //   // console.log(req.body, "this is body");
-  //   res.send(statusCode, req.body)
-  // }
+  if (!req.body) {
+    return res.sendStatus(400)
+  }
+  else {
+    var statusCode = 201
+    const newShip = new db.Ship({
+      shipData: req.body.ship,
+      username: req.body.username,
+    })
+    newShip.save((err) => {
+      if (err) {
+        return console.error(err)
+      }
+    });
+    // console.log(req.body, "this is body");
+    res.send(statusCode, req.body)
+  }
 })
 
 app.put('/ships', function (req, res) {

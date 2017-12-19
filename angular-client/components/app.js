@@ -18,21 +18,29 @@ angular.module('app')
 .controller('AppCtrl', function($scope, $http){
   $scope.ships = [];
   $scope.addUser = (username) => {
-    $http.post('/users', $scope.data)
-      .then((response) => {
-      console.log(username);
-        return $http({
-          method: 'POST',
-          url: '/users',
-          data: {
-            username: username
-          },
-          headers: { 'Content-Type': 'application/json' }
-        });
-    }).catch(err => console.error(err));
+    $http.post('/users', { username })
+      .then((res) => console.log(res))
+      .catch(err => console.error(err));
+    // $http.post('/users', $scope.data)
+    //   .then((response) => {
+    //   console.log(username);
+    //     return $http({
+    //       method: 'POST',
+    //       url: '/users',
+    //       data: {
+    //         username: username
+    //       },
+    //       headers: { 'Content-Type': 'application/json' }
+    //     });
+    // }).catch(err => console.error(err));
   },
   $scope.removeUser = (username) => {
+    // console.log(username, "this is username!@!@!@")
+    // $http.delete('/users', username )
+    //   .then((res) => console.log(res))
+    //   .catch(err => console.error(err));
     $http.delete('/users', $scope.data)
+    // console.log($scope.data, "this is data!@!@")
       .then((response) => {
       console.log(username);
         return $http({
