@@ -14,13 +14,17 @@
 //     }
 //   }]);
 
-  
 angular.module('app')
 .controller('AppCtrl', function($scope, $http){
   $scope.addUser = function(username) {
     $http.post('/users', $scope.data)
     .then((response) => {
-      console.log('posted')
+      console.log(username);
+      $http({
+        url: "/users",
+        method: "POST",
+        params: username
+      })
     }).catch((response) => {
       console.log('error in posting2')
     })
@@ -29,6 +33,7 @@ angular.module('app')
 .component('app', {
   bindings: {
     //create a post function binding here
+
   },
   controller: 'AppCtrl',
   templateUrl: '/templates/app.html'

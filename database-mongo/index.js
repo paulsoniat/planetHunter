@@ -1,35 +1,15 @@
 var mongoose = require('mongoose');
 //connect to your server here
 mongoose.connect('mongodb://planetfinder:planetfinder@ds159926.mlab.com:59926/planethunter');
-
 var db = mongoose.connection;
-
 db.on('error', function() {
   console.log('mongoose connection error');
 });
-
 db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
 var Schema = mongoose.Schema;
-
-// var itemSchema = mongoose.Schema({
-//   quantity: Number,
-//   description: String
-// });
-
-// var Item = mongoose.model('Item', itemSchema);
-
-// var selectAll = function(callback) {
-//   Item.find({}, function(err, items) {
-//     if(err) {
-//       callback(err, null);
-//     } else {
-//       callback(null, items);
-//     }
-//   });
-// };
 
 var userSchema = mongoose.Schema({
   username: String,
