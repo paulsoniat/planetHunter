@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
   <script src="angular/angular.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-  <div class="container-fluid">
+<body style="background-image:url(https://i.ytimg.com/vi/odmvYDXwhpg/maxresdefault.jpg)">
+  <font color="#99999">
+  <div class="container-fluid"></div>
     <div class="row">
       <div class="col-md-12">
         <div class="page-header">
@@ -22,16 +25,25 @@
       </div>
     </div>
   </div>
-  <div ng-app="app">
+  <div ng-app="app" >
     <div ng-controller="AppCtrl">
-      <input type="text" ng-model="username" />
-        <button ng-click="addUser(username)">Login</button>
-        <button ng-click="removeUser(username)">LogOut</button>
-        <div ng-repeat="ship in ships">
-          <div>{{ship.name}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
-          <button ng-click="registerShip(ship, username)">Add Ship</button>
-          <button ng-click="changeShip(ship, username)">Change Ship</button>
+      <div class="container-fluid">
+        <div class="well">
+          <input type="text" ng-model="username" />
+          <button style="background-color:lightgreen" ng-click="addUser(username)">Login</button>
+          <button style="background-color:red" ng-click="removeUser(username)">LogOut</button>
         </div>
+      </div>
+        <div ng-repeat="ship in ships">
+          <div class="container-fluid">
+          <div class="well">{{ship.name}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
+          <button style="background-color:lightgreen" ng-click="registerShip(ship, username)">Add Ship</button>
+          <button style="background-color:red" ng-click="changeShip(ship, username)">Change Ship</button>
+        </div>
+        </div>
+        <audio controls autoplay>
+          <source src="Star_Wars_Main_Theme_Full[Mp3Converter.net].mp3" type="audio/mpeg">
+        </audio>
       </div>
     <app />
   </div>
