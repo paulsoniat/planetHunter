@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
 var db = require('../database-mongo');
+require('dotenv').config();
 
 
 
@@ -43,7 +44,7 @@ app.post('/users', function (req, res) {
 })
 
 
-app.listen(3000, function() {
-  console.log('listening on port 3000!');
+app.listen(process.env.PORT, function() {
+  console.log(`listening on port ${process.env.PORT}!`);
 });
 
