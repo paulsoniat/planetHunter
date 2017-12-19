@@ -36,6 +36,7 @@
       </div>
         <div ng-repeat="ship in ships">
           <div class="container-fluid">
+          <div class="well">{{"name"}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
           <div class="well">{{ship.name}} {{ship.manufacturer}} {{ship.cost_in_credits}}</div>
           <button style="background-color:lightgreen" ng-click="registerShip(ship, username)">Add Ship</button>
           <button style="background-color:red" ng-click="changeShip(ship, username)">Change Ship</button>

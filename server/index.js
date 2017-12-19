@@ -59,7 +59,7 @@ app.delete('/users', function (req, res) {
 app.post('/ships', function (req, res) {
   
   const { ship } = req.body;
-  console.log(ship, 'this is shiptype!$!$!$$')
+  console.log(ship.name, 'this is shiptype!$!$!$$')
   // console.log(name, "this is ship name!@!#!$$!")
   if (!req.body) {
     return res.sendStatus(400)
@@ -67,7 +67,7 @@ app.post('/ships', function (req, res) {
   else {
     var statusCode = 201
     const newShip = new db.Ship({
-      shipData: req.body.ship,
+      shipData: req.body.ship.name,
       username: req.body.username,
     })
     newShip.save((err) => {
