@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var db = require('../database-mongo');
 
 require('dotenv').config();
-const { PORT } = Process.env
+const { PORT } = process.env
 
 var app = express();
 
