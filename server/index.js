@@ -41,21 +41,21 @@ app.post('/users', function (req, res) {
     res.send(statusCode, req.body)
   }
 })
+
 app.delete('/users', function (req, res) {
   if (!req.body) {
     return res.sendStatus(400)
   }
   else {
     var statusCode = 201
-    //what should model be here?
-    var query = Model.find().remove({ name: `${username}` })
+    var query = db.User.find().remove({ username: `${req.body.username}` })
     query.exec()
     res.send(statusCode, req.body)
   }
 })
 
 app.post('/ships', function (req, res) {
-  console.log(req.body, "this is the body");
+  console.log(req.body, "this is the bodyYASYDAYDASDY");
   if (!req.body) {
     return res.sendStatus(400)
   }
@@ -74,6 +74,23 @@ app.post('/ships', function (req, res) {
     res.send(statusCode, req.body)
   }
 })
+
+app.put('/ships', function (req, res) {
+  console.log(req.body, "this is the body");
+  if (!req.body) {
+    return res.sendStatus(400)
+  }
+  else {
+    //find the ship with matching username and change it to the ship provided
+    // var query = db.User.find().remove({ username: `${req.body.username}` })
+    statusCode = 200;
+    //not actually updating
+    // var query = db.Ship.update({ username: `${req.body.username}` }, { username: `${req.body.username}`, ship: `${req.body.ship}`})
+    query.exec()
+    res.send(statusCode, req.body)
+  }
+})
+
 
 // app.listen(PORT, function() {
 //   console.log(`listening on port ${PORT}!`);
