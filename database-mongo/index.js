@@ -18,7 +18,7 @@ var userSchema = mongoose.Schema({
 var User = mongoose.model('User', userSchema);
 
 var shipSchema = mongoose.Schema({
-  shipData: {},
+  shipData: String,
   username: String
   //maybe add other things here
 });

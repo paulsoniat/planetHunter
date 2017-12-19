@@ -56,28 +56,32 @@ app.delete('/users', function (req, res) {
 })
 
 app.post('/ships', function (req, res) {
-  console.log(req.body, "this is the bodyYASYDAYDASDY");
-  if (!req.body) {
-    return res.sendStatus(400)
-  }
-  else {
-    var statusCode = 201
-    const newShip = new db.Ship({
-      username: req.body.username,
-      shipData: req.body.ship
-    })
-    newShip.save((err) => {
-      if (err) {
-        return console.error(err)
-      }
-    });
-    console.log(req.body, "this is body");
-    res.send(statusCode, req.body)
-  }
+  
+  const { ship } = req.body;
+  console.log(ship, 'this is shiptype!$!$!$$')
+  res.send('tryin shit')
+  // console.log(name, "this is ship name!@!#!$$!")
+  // if (!req.body) {
+  //   return res.sendStatus(400)
+  // }
+  // else {
+  //   var statusCode = 201
+  //   const newShip = new db.Ship({
+  //     shipData: req.body.ship,
+  //     username: req.body.username,
+  //   })
+  //   newShip.save((err) => {
+  //     if (err) {
+  //       return console.error(err)
+  //     }
+  //   });
+  //   // console.log(req.body, "this is body");
+  //   res.send(statusCode, req.body)
+  // }
 })
 
 app.put('/ships', function (req, res) {
-  console.log(req.body, "this is the body");
+  console.log(req.body, "this is the bodyasfgasfaf");
   if (!req.body) {
     return res.sendStatus(400)
   }

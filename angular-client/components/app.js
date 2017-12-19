@@ -57,38 +57,42 @@ angular.module('app')
     })
   },
     $scope.registerShip = (ship, username) => {
-      console.log(ship, username, "ship and username")
-      $http.post('/ships', $scope.data)
+      
+      $http.post('/ships', { ship, username })
+        .then((res) => console.log(res))
+        .catch(err => console.error(err));
       // console.log($scope.data)
-        .then((response) => {
-          // console.log(username);
-          return $http({
-            method: 'POST',
-            url: '/ships',
-            data: {
-              username: username,
-              ship: ship
-            },
-            headers: { 'Content-Type': 'application/json' }
-          });
-        }).catch(err => console.error(err));
+        // .then((response) => {
+        //   // console.log(username);
+        //   return $http({
+        //     method: 'POST',
+        //     url: '/ships',
+        //     data: {
+        //       username: username,
+        //       ship: ship
+        //     },
+        //     headers: { 'Content-Type': 'application/json' }
+        //   });
+        // }).catch(err => console.error(err));
     }
     $scope.changeShip = (ship, username) => {
-      console.log(ship, username, "ship and username")
-      $http.put('/ships', $scope.data)
+
+      $http.put('/ships', { ship, username })
+        .then((res) => console.log(res))
+        .catch(err => console.error(err));
       // console.log($scope.data)
-        .then((response) => {
-          // console.log(username);
-          return $http({
-            method: 'PUT',
-            url: '/ships',
-            data: {
-              username: username,
-              ship: ship
-            },
-            headers: { 'Content-Type': 'application/json' }
-          });
-        }).catch(err => console.error(err));
+        // .then((response) => {
+        //   // console.log(username);
+        //   return $http({
+        //     method: 'PUT',
+        //     url: '/ships',
+        //     data: {
+        //       username: username,
+        //       ship: ship
+        //     },
+        //     headers: { 'Content-Type': 'application/json' }
+        //   });
+        // }).catch(err => console.error(err));
     }
   $scope.starWars();
 })
