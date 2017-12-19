@@ -41,7 +41,24 @@ angular.module('app')
     }).catch(err => {
       console.error(err);
     })
-  }
+  },
+    $scope.registerShip = (ship, username) => {
+      console.log(ship, username, "ship and username")
+      $http.post('/ships', $scope.data)
+      // console.log($scope.data)
+        .then((response) => {
+          // console.log(username);
+          return $http({
+            method: 'POST',
+            url: '/ships',
+            data: {
+              username: username,
+              ship: ship
+            },
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }).catch(err => console.error(err));
+    }
   $scope.starWars();
 })
 .component('app', {

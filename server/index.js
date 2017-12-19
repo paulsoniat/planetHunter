@@ -42,6 +42,15 @@ app.post('/users', function (req, res) {
   }
 })
 
+app.post('/ships', function (req, res) {
+  if (!req.body) {
+    return res.sendStatus(400)
+  }
+  else {
+    console.log(req.body)
+    res.send(201)
+  }
+})
 
 // app.listen(PORT, function() {
 //   console.log(`listening on port ${PORT}!`);
