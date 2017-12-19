@@ -63,3 +63,11 @@ module.exports.Ship = Ship;
 module.exports.Planet = Planet;
 module.exports.Partner = Partner;
 module.exports.JediProfile = JediProfile;
+
+// module.exports = {
+//   User = User,
+//   Ship = Ship,
+//   Planet = Planet,
+//   Partner = Partner,
+//   JediProfile = JediProfile
+// }

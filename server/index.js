@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
-var items = require('../database-mongo');
+var db = require('../database-mongo');
 
 
 
@@ -29,22 +29,13 @@ app.post('/users', function (req, res) {
   }
   else {
     var statusCode = 201
-    console.log(req.body);
+    const newUser = new db.User({
+      username : req.body.username
+    })
+    console.log(req.body, "this is body");
     res.send(statusCode, req.body)
   }
 })
-
-
-// app.post('/users', function (req, res) {
-//   //want to create a new user schema
-//   //then save that user to the users db
-
-
-//   //parse readable body into a stream? 
-//   console.log(req)
-//     console.log("helloooooo in post res");
-//     res.send(201)
-// });
 
 
 app.listen(3000, function() {

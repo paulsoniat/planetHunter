@@ -18,16 +18,17 @@ angular.module('app')
 .controller('AppCtrl', function($scope, $http){
   $scope.addUser = function(username) {
     $http.post('/users', $scope.data)
-    .then((response) => {
+      .then((response) => {
       console.log(username);
-      $http({
-        url: "/users",
-        method: "POST",
-        params: username
-      })
-    }).catch((response) => {
-      console.log('error in posting2')
-    })
+        return $http({
+          method: 'POST',
+          url: '/users',
+          data: {
+            username: username
+          },
+          headers: { 'Content-Type': 'application/json' }
+        });
+    }).catch(err => console.error(err));
   }
 })
 .component('app', {
