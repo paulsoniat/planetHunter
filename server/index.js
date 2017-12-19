@@ -52,11 +52,11 @@ app.post('/ships', function (req, res) {
   }
 })
 
-// app.listen(PORT, function() {
-//   console.log(`listening on port ${PORT}!`);
-// });
-
-app.listen(3000, function() {
-  console.log(`listening on port 3000!`);
+app.listen(PORT, function() {
+  console.log(`listening on port ${PORT}!`);
 });
+
+// app.listen(3000, function() {
+//   console.log(`listening on port 3000!`);
+// });
 
