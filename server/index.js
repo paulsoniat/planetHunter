@@ -95,7 +95,7 @@ app.put('/ships', function (req, res) {
   //not actually updating
   else {
     statusCode = 200;
-    db.Ship.update({ username: "harvey" }, { $set: { shipData: "millenium falcon" } }, (err, resDoc) => {
+    db.Ship.update({ username: `${req.body.username}` }, { $set: { shipData: `${req.body.ship.name}`  } }, (err, resDoc) => {
       if (err) {
         console.log(err)
       }
