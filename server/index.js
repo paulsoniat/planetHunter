@@ -43,20 +43,31 @@ app.post('/users', function (req, res) {
 })
 
 app.post('/ships', function (req, res) {
+  console.log(req.body, "this is the body");
   if (!req.body) {
     return res.sendStatus(400)
   }
   else {
-    console.log(req.body)
-    res.send(201)
+    var statusCode = 201
+    const newShip = new db.Ship({
+      username: req.body.username,
+      shipData: req.body.ship
+    })
+    newShip.save((err) => {
+      if (err) {
+        return console.error(err)
+      }
+    });
+    console.log(req.body, "this is body");
+    res.send(statusCode, req.body)
   }
 })
 
-app.listen(PORT, function() {
-  console.log(`listening on port ${PORT}!`);
-});
-
-// app.listen(3000, function() {
-//   console.log(`listening on port 3000!`);
+// app.listen(PORT, function() {
+//   console.log(`listening on port ${PORT}!`);
 // });
+
+app.listen(3000, function() {
+  console.log(`listening on port 3000!`);
+});
 

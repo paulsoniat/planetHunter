@@ -18,9 +18,8 @@ var userSchema = mongoose.Schema({
 var User = mongoose.model('User', userSchema);
 
 var shipSchema = mongoose.Schema({
-  shipName: String,
-  shipSpeed: String,
-  imageURL: String
+  shipData: {},
+  username: String
   //maybe add other things here
 });
 var Ship = mongoose.model('Ship', shipSchema);
