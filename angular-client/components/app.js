@@ -35,7 +35,7 @@ angular.module('app')
     $http.get('https://swapi.co/api/starships')
     .then((response) => {
       response.data.results.forEach(starShip => {
-        console.log(starShip);
+        // console.log(starShip)
         $scope.ships.push(starShip);
       })
     }).catch(err => {

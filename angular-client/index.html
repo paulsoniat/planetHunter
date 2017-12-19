@@ -10,9 +10,10 @@
       <input type="text" ng-model="username" />
         <button ng-click="addUser(username)">Login</button>
     </div>
-    <div ship="ship" ng-repeat="ship in ships">
-      {{ship}}
-    </div>
+    <tr ng-repeat="x in ships">
+      <td>{{x.Name}}</td>
+      <td>{{x.Country}}</td>
+    </tr>
     <app />
   </div>
   <script type="text/javascript" src="index.js"></script>
