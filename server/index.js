@@ -86,7 +86,8 @@ app.post('/ships', function (req, res) {
 
 app.put('/ships', function (req, res) {
   // console.log('in put to ships');
-  // console.log(req.body.username)
+  console.log(req.body.username)
+  console.log(req.body.ship)
   if (!req.body) {
     return res.sendStatus(400)
   }
@@ -94,19 +95,22 @@ app.put('/ships', function (req, res) {
   //not actually updating
   else {
     statusCode = 200;
-    // var query = db.Ship.update({ username: `${req.body.username}` }, { username: `${req.body.username}`, ship: `${req.body.ship.name}`})
-    // query.exec()
-    // console.log('query complete')
-    // res.send(statusCode, req.body)
-    db.Ship.update(
-      { username: `${req.body.username}` },
-      { $set: { "shipData": `${req.body.ship.name}` }},
-    {
-    upsert: true,
-    //  multi: <boolean>,
-    //  writeConcern: <document>
+    db.Ship.update({ username: "harvey" }, { $set: { shipData: "millenium falcon" } }, (err, resDoc) => {
+      if (err) {
+        console.log(err)
+      }
+      else {
+        res.send(resDoc)
+      }
     })
-    res.send(statusCode, req.body)
+    // query.exec((err, resDoc) => {
+    //   if (err) {
+    //     console.log(err)
+    //   }
+    //   else {
+    //     res.send(resDoc)
+    //   }
+    // })
   }
 })
 
