@@ -5,12 +5,29 @@
   <script src="angular/angular.js"></script>
 </head>
 <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1>
+            PlanetHunter
+            <small>
+              <h1></h1>
+
+              Ever thought about how you would fit into the StarWars Galaxy? Now you can figure out. You, as the user, will select the
+              type of criteria that fits you. With these choices, we will tell you what type of gear, planets, and partners
+              will help you become the next Jedi!</small>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
   <div ng-app="app">
     <div ng-controller="AppCtrl">
       <input type="text" ng-model="username" />
         <button ng-click="addUser(username)">Login</button>
-        <div ng-repeat="x in ships">
-          <div>{{x}} </div>
+        <div ng-repeat="ship in ships">
+          <div>{{ship.name}} {{ship.cost_in_credits}} {{ship.manufacturer}} </div>
         </div>
     </div>
     <app />
