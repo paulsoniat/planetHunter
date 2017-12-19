@@ -16,7 +16,8 @@
 
 angular.module('app')
 .controller('AppCtrl', function($scope, $http){
-  $scope.addUser = function(username) {
+  $scope.ships = [];
+  $scope.addUser = (username) => {
     $http.post('/users', $scope.data)
       .then((response) => {
       console.log(username);
@@ -29,12 +30,23 @@ angular.module('app')
           headers: { 'Content-Type': 'application/json' }
         });
     }).catch(err => console.error(err));
+  },
+  $scope.starWars = () => {
+    $http.get('https://swapi.co/api/starships')
+    .then((response) => {
+      response.data.results.forEach(starShip => {
+        console.log(starShip);
+        $scope.ships.push(starShip);
+      })
+    }).catch(err => {
+      console.error(err);
+    })
   }
+  $scope.starWars();
 })
 .component('app', {
   bindings: {
-    //create a post function binding here
-
+    ships: '<'
   },
   controller: 'AppCtrl',
   templateUrl: '/templates/app.html'
