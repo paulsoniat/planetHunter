@@ -9,7 +9,6 @@
     "start": "node index.js",
     "test": "node test.js"
   },
-  // "start": "node index.js",
   "author": "Beth Johnson",
   "license": "ISC",
   "devDependencies": {
@@ -19,6 +18,11 @@
     "babel-preset-react": "^6.23.0",
     "webpack": "^2.2.1"
   },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
   "dependencies": {
     "angular": "^1.6.3",
     "body-parser": "^1.17.2",

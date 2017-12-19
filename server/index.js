@@ -3,10 +3,9 @@ var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
 var db = require('../database-mongo');
+
 require('dotenv').config();
-
-
-
+const { PORT } = Process.env
 
 var app = express();
 
@@ -37,14 +36,14 @@ app.post('/users', function (req, res) {
       if (err) {
         return console.error(err)
       }
-    })
+    });
     console.log(req.body, "this is body");
     res.send(statusCode, req.body)
   }
 })
 
 
-app.listen(process.env.PORT, function() {
-  console.log(`listening on port ${process.env.PORT}!`);
+app.listen(PORT, function() {
+  console.log(`listening on port ${PORT}!`);
 });
 
