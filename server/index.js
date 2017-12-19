@@ -32,6 +32,11 @@ app.post('/users', function (req, res) {
     const newUser = new db.User({
       username : req.body.username
     })
+    newUser.save((err) => {
+      if (err) {
+        return console.error(err)
+      }
+    })
     console.log(req.body, "this is body");
     res.send(statusCode, req.body)
   }
