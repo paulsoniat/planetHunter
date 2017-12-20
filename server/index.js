@@ -91,8 +91,6 @@ app.put('/ships', function (req, res) {
   if (!req.body) {
     return res.sendStatus(400)
   }
-  //find the ship with matching username and change it to the ship provided
-  //not actually updating
   else {
     statusCode = 200;
     db.Ship.update({ username: `${req.body.username}` }, { $set: { shipData: `${req.body.ship.name}`  } }, (err, resDoc) => {
@@ -103,24 +101,16 @@ app.put('/ships', function (req, res) {
         res.send(resDoc)
       }
     })
-    // query.exec((err, resDoc) => {
-    //   if (err) {
-    //     console.log(err)
-    //   }
-    //   else {
-    //     res.send(resDoc)
-    //   }
-    // })
   }
 })
 
 
 
-// app.listen(PORT, function() {
-//   console.log(`listening on port ${PORT}!`);
-// });
-
-app.listen(3000, function() {
-  console.log(`listening on port 3000!`);
+app.listen(PORT, function() {
+  console.log(`listening on port ${PORT}!`);
 });
+
+// app.listen(3000, function() {
+//   console.log(`listening on port 3000!`);
+// });
 
